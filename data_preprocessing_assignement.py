@@ -14,13 +14,16 @@ The Features of this dataset are:
 Happy coding."""
 
 # Step 0: import the necessary libraries: pandas, matplotlib.pyplot, and numpy.
-
+    import numpy as np
+    import pandas as pd 
+    import matplotlib.pyplot as plt 
 # Step 1: load your dataset using pandas
-
+    data = pd.read_csv('Social_Network_Ads.csv')
 # Step 2: Handle Missing data if they exist.
-
+    data.fillna(data.mean(), inplace=True)
 # Step 3: Encode the categorical variables.
-
+    df = pd.get_dummies(data,prefix="",columns=['Gender'])
 # Step 4: Do Feature Scaling if necessary.
-
+    
 # Final Step: Train/Test Splitting.
+    
